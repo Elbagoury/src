@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "JetBrainsMono Nerd Font:size=14:antialiased=true:autohint=true";
-static int borderpx = 8;
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,38 +93,42 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-/* Colorscheme (Gruvbox Dark) */
+/* Terminal colors (16 shade palette) */
 static const char *colorname[] = {
-    "#282828", /* 0: black   (bg)      */
-    "#cc241d", /* 1: red               */
-    "#98971a", /* 2: green             */
-    "#d79921", /* 3: yellow            */
-    "#458588", /* 4: blue              */
-    "#b16286", /* 5: magenta           */
-    "#689d6a", /* 6: cyan              */
-    "#a89984", /* 7: white   (fg)      */
-    /* Light variants */
-    "#928374", /* 8: bright black      */
-    "#fb4934", /* 9: bright red        */
-    "#b8bb26", /* 10: bright green     */
-    "#fabd2f", /* 11: bright yellow    */
-    "#83a598", /* 12: bright blue      */
-    "#d3869b", /* 13: bright magenta   */
-    "#8ec07c", /* 14: bright cyan      */
-    "#ebdbb2", /* 15: bright white     */
-};
+	/* 8 normal colors */
+	"#16161d", /* sumiInk0:     black   */
+	"#c34043", /* autumnRed:    red     */
+	"#76946a", /* autumnGreen:  green   */
+	"#c0a36e", /* boatYellow2:  yellow  */
+	"#7e9cd8", /* crystalBlue:  blue    */
+	"#957fb8", /* oniViolet:    magenta */
+	"#6a9589", /* waveAqua1:    cyan    */
+	"#c8c093", /* oldWhite:     white   */
 
+	/* 8 bright colors */
+	"#54546d", /* sumiInk4:     black   */
+	"#e46876", /* waveRed:      red     */
+	"#98bb6c", /* springGreen:  green   */
+	"#e6c384", /* carpYellow:   yellow  */
+	"#7fb4ca", /* springBlue:   blue    */
+	"#938aa9", /* springViolet1:magenta */
+	"#7aa89f", /* waveAqua2:    cyan    */
+	"#dcd7ba", /* fujiWhite:    white   */
+
+	[255] = 0,
+	/* More colors can be added after 255 to use with DefaultXX options below */
+	"#1f1f28", /* 256: sumiInk1 Default background override */
+	"#dcd7ba", /* 257: fujiWhite Default foreground override */
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-/* Default colors */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+unsigned int defaultcs = 257;
+unsigned int defaultrcs = 256;
 /*
  * Default shape of cursor
  * 2: Block ("█")

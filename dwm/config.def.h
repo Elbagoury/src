@@ -7,15 +7,16 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"monospace:size=12"};
 static const char dmenufont[]       = "monospace:size=14";
-static const char col_gray1[]       = "#282828"; // Bar background
-static const char col_gray2[]       = "#3c3836"; // Inactive window border
-static const char col_gray3[]       = "#a89984"; // Inactive text
-static const char col_gray4[]       = "#ebdbb2"; // Active text
-static const char col_cyan[]        = "#458588"; // Active tag/accent (Gruvbox Blue)
+static const char col_gray1[]       = "#1f1f28"; // Bar background (sumiInk1)
+static const char col_gray2[]       = "#2a2a37"; // Inactive window border (sumiInk2)
+static const char col_gray3[]       = "#727169"; // Inactive text (fujiGray)
+static const char col_gray4[]       = "#dcd7ba"; // Active text (fujiWhite)
+static const char col_cyan[]        = "#2d4f67"; // Active tag/accent (waveBlue2)
+
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+    /* fg         bg         border   */
+    [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+    [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
 /* tagging */
@@ -40,7 +41,7 @@ static const int refreshrate = 120;  /* refresh rate (per second) for client mov
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "GTD",      tile },    /* first entry is default */
+	{ "|",        tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
